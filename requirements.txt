@@ -1,0 +1,4 @@
+# Core package: Python standard library only — no runtime dependencies.
+# Optional extras (not required to run or test the core):
+#   pip install -e ".[openai]"   # OpenAI-backed generation
+#   pip install -e ".[train]"    # LoRA/QLoRA fine-tuning (GPU, see training/)

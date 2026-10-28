@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "code-assistant"
+version = "0.1.0"
+description = "Domain-specific code generation and refactoring assistant for Python codebases, with AST safety guardrails and an automated test harness."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Rajesh Kodaganti" }]
+requires-python = ">=3.10"
+keywords = ["code-generation", "refactoring", "llm", "rag", "ast", "lora"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Software Development :: Code Generators",
+]
+
+# The core package is intentionally standard-library only.
+dependencies = []
+
+[project.optional-dependencies]
+openai = ["openai>=1.0"]
+train = ["torch", "peft", "transformers", "datasets", "accelerate"]
+
+[project.scripts]
+code-assistant = "code_assistant.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
